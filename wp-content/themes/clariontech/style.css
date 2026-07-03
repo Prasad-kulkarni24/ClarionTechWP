@@ -223,6 +223,69 @@ input, textarea, select, button {
     border: none;
     cursor: pointer;
     padding: 4px;
+    color: var(--color-dark-navy);
+}
+
+/* Mobile nav drawer — hidden by default, shown when toggled */
+.mobile-nav {
+    display: none;
+    position: fixed;
+    top: var(--header-height);
+    left: 0;
+    right: 0;
+    z-index: 999;
+    background: var(--color-white);
+    border-bottom: 1px solid var(--color-border);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    padding: 8px 24px 24px;
+}
+
+.mobile-nav.is-open {
+    display: block;
+}
+
+.mobile-nav ul {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 16px;
+}
+
+.mobile-nav ul li a {
+    display: block;
+    padding: 14px 0;
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--color-dark-navy);
+    border-bottom: 1px solid var(--color-border);
+    transition: color 0.2s;
+}
+
+.mobile-nav ul li:last-child a {
+    border-bottom: none;
+}
+
+.mobile-nav ul li a:hover {
+    color: var(--color-orange);
+}
+
+.mobile-nav > .btn-primary {
+    display: block;
+    text-align: center;
+    width: 100%;
+    margin-top: 8px;
+}
+
+@media (max-width: 768px) {
+    .mobile-menu-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .main-nav,
+    .header-cta {
+        display: none;
+    }
 }
 
 /* ============================================================
