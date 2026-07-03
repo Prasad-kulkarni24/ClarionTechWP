@@ -25,6 +25,8 @@ get_header();
 
     <?php get_template_part( 'template-parts/get-started' ); ?>
 
+    <?php get_template_part( 'template-parts/faq' ); ?>
+
     <?php
     // More sections will be added here
     ?>
