@@ -15,6 +15,8 @@ get_header();
 
     <?php get_template_part( 'template-parts/case-studies' ); ?>
 
+    <?php get_template_part( 'template-parts/why-clarion' ); ?>
+
     <?php
     // More sections will be added here
     ?>
