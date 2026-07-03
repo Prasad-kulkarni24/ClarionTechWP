@@ -1386,3 +1386,214 @@ input, textarea, select, button {
         font-size: 26px;
     }
 }
+
+/* ============================================================
+   TESTIMONIALS SECTION
+   ============================================================ */
+.testimonials-section {
+    padding: 80px 0 88px;
+    background: var(--color-white);
+    overflow: hidden;
+}
+
+/* ── Header row ───────────────────────────────────────── */
+.tm-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 24px;
+    margin-bottom: 48px;
+}
+
+.tm-heading {
+    font-size: clamp(28px, 3.5vw, 42px);
+    font-weight: 800;
+    color: var(--color-dark-navy);
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+}
+
+/* ── Prev / Next buttons ──────────────────────────────── */
+.tm-nav {
+    display: flex;
+    gap: 8px;
+    flex-shrink: 0;
+    align-self: flex-start;
+    margin-top: 6px;
+}
+
+.tm-nav-btn {
+    width: 44px;
+    height: 44px;
+    background: var(--color-orange);
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+    color: var(--color-white);
+}
+
+.tm-nav-btn:hover {
+    background: var(--color-orange-hover);
+}
+
+.tm-nav-btn svg {
+    width: 18px;
+    height: 18px;
+}
+
+/* ── Slide track ──────────────────────────────────────── */
+.tm-track-wrap {
+    overflow: hidden;
+}
+
+.tm-track {
+    display: flex;
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* ── Each slide = two cards side by side ──────────────── */
+.tm-slide {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    flex: 0 0 100%;
+    min-width: 0;
+}
+
+/* ── Individual testimonial card ──────────────────────── */
+.tm-card {
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+    padding: 36px 32px 32px;
+    position: relative;
+    background: var(--color-white);
+    margin: 0;
+}
+
+.tm-card--placeholder {
+    opacity: 0.45;
+}
+
+/* Large orange open-quote mark */
+.tm-quote-mark {
+    font-size: 80px;
+    line-height: 1;
+    color: var(--color-orange);
+    font-family: Georgia, serif;
+    position: absolute;
+    top: 20px;
+    left: 28px;
+    pointer-events: none;
+    select: none;
+}
+
+.tm-card-body {
+    display: flex;
+    gap: 24px;
+    align-items: flex-start;
+    padding-top: 40px;
+}
+
+/* ── Photo ────────────────────────────────────────────── */
+.tm-photo-wrap {
+    flex-shrink: 0;
+    width: 120px;
+    height: 140px;
+    border-radius: 4px;
+    overflow: hidden;
+    background: #d8d8d8;
+}
+
+.tm-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.tm-photo-placeholder {
+    background: linear-gradient(135deg, #d0d4d8 0%, #b8bec4 100%);
+}
+
+/* ── Quote text & author ──────────────────────────────── */
+.tm-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.tm-text {
+    font-size: 14px;
+    color: var(--color-text-body);
+    line-height: 1.75;
+    margin-bottom: 20px;
+}
+
+.tm-author {
+    display: block;
+}
+
+.tm-author-name {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--color-dark-navy);
+    margin-bottom: 2px;
+}
+
+.tm-author-role {
+    font-size: 13px;
+    color: var(--color-text-light);
+    line-height: 1.4;
+}
+
+/* ── Subtle right-side glow (matches design) ──────────── */
+.testimonials-section::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 320px;
+    height: 400px;
+    background: radial-gradient(ellipse at right center, rgba(200, 230, 248, 0.5) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.testimonials-section {
+    position: relative;
+}
+
+/* ── Responsive ───────────────────────────────────────── */
+@media (max-width: 900px) {
+    .tm-slide {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+}
+
+@media (max-width: 600px) {
+    .testimonials-section {
+        padding: 56px 0 64px;
+    }
+
+    .tm-header {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .tm-card-body {
+        flex-direction: column;
+    }
+
+    .tm-photo-wrap {
+        width: 80px;
+        height: 96px;
+    }
+
+    .tm-quote-mark {
+        font-size: 60px;
+    }
+}

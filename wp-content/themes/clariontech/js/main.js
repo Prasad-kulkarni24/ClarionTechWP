@@ -148,4 +148,23 @@
         } );
     }
 
+    // ── Testimonials prev/next slider ────────────────────────────
+    const tmTrack = document.getElementById( 'tm-track' );
+    const tmPrev  = document.querySelector( '.tm-prev' );
+    const tmNext  = document.querySelector( '.tm-next' );
+
+    if ( tmTrack && tmPrev && tmNext ) {
+        const slides  = tmTrack.querySelectorAll( '.tm-slide' );
+        let current   = 0;
+        const total   = slides.length;
+
+        const goTo = function ( index ) {
+            current = ( index + total ) % total;
+            tmTrack.style.transform = 'translateX(-' + ( current * 100 ) + '%)';
+        };
+
+        tmPrev.addEventListener( 'click', function () { goTo( current - 1 ); } );
+        tmNext.addEventListener( 'click', function () { goTo( current + 1 ); } );
+    }
+
 } )();

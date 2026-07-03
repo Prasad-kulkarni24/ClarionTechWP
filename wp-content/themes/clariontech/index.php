@@ -17,6 +17,8 @@ get_header();
 
     <?php get_template_part( 'template-parts/why-clarion' ); ?>
 
+    <?php get_template_part( 'template-parts/testimonials' ); ?>
+
     <?php
     // Additional page sections will be added here as more designs are shared
     ?>
