@@ -42,20 +42,20 @@ function clariontech_assets() {
         null
     );
 
-    // Theme stylesheet
+    // Theme stylesheet — version tied to file modification time to bust any cache
     wp_enqueue_style(
         'clariontech-style',
         get_stylesheet_uri(),
         [ 'clariontech-fonts' ],
-        CLARIONTECH_VERSION
+        filemtime( get_stylesheet_directory() . '/style.css' )
     );
 
-    // Main JS
+    // Main JS — same cache-busting strategy
     wp_enqueue_script(
         'clariontech-main',
         CLARIONTECH_URI . '/js/main.js',
         [],
-        CLARIONTECH_VERSION,
+        filemtime( CLARIONTECH_DIR . '/js/main.js' ),
         true
     );
 
