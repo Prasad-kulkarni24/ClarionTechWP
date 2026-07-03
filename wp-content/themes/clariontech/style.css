@@ -1047,3 +1047,209 @@ input, textarea, select, button {
         padding: 28px 20px;
     }
 }
+
+/* ============================================================
+   CASE STUDIES SECTION
+   ============================================================ */
+.case-studies-section {
+    background: #F5F5F5;
+    padding: 80px 0 0;
+    overflow: hidden;
+}
+
+.cs-header {
+    max-width: 760px;
+    margin-bottom: 48px;
+}
+
+.cs-heading {
+    font-size: clamp(26px, 3.5vw, 38px);
+    font-weight: 800;
+    color: var(--color-dark-navy);
+    line-height: 1.15;
+    margin-bottom: 16px;
+}
+
+.cs-description {
+    font-size: 15px;
+    color: var(--color-text-body);
+    line-height: 1.75;
+    max-width: 680px;
+}
+
+/* ── Scrollable track ─────────────────────────────────── */
+.cs-track-wrap {
+    overflow: hidden;
+    cursor: grab;
+}
+
+.cs-track-wrap:active {
+    cursor: grabbing;
+}
+
+.cs-track {
+    display: flex;
+    gap: 24px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding-bottom: 40px;
+}
+
+.cs-track::-webkit-scrollbar {
+    display: none;
+}
+
+/* ── Individual card ──────────────────────────────────── */
+.cs-card {
+    flex: 0 0 calc(100% - 2px);
+    scroll-snap-align: start;
+    display: grid;
+    grid-template-columns: 1fr 420px;
+    background: var(--color-white);
+    border-radius: 4px;
+    overflow: hidden;
+    min-height: 460px;
+}
+
+.cs-card-content {
+    padding: 48px 44px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.cs-card-title {
+    font-size: 22px;
+    font-weight: 800;
+    color: var(--color-dark-navy);
+    line-height: 1.25;
+    margin-bottom: 20px;
+}
+
+.cs-card-desc {
+    font-size: 14px;
+    color: var(--color-text-body);
+    line-height: 1.75;
+    margin-bottom: 12px;
+}
+
+/* ── Results list ─────────────────────────────────────── */
+.cs-results {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px 32px;
+    margin: 24px 0 32px;
+}
+
+.cs-results li {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding-left: 16px;
+    border-left: 3px solid var(--color-orange);
+}
+
+.cs-result-metric {
+    font-size: 18px;
+    font-weight: 800;
+    color: var(--color-dark-navy);
+    line-height: 1.2;
+}
+
+.cs-result-label {
+    font-size: 12px;
+    color: var(--color-text-light);
+    line-height: 1.4;
+}
+
+/* ── CTA button ───────────────────────────────────────── */
+.cs-cta-btn {
+    display: inline-block;
+    background: var(--color-orange);
+    color: var(--color-white);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 14px 28px;
+    text-decoration: none;
+    border-radius: 2px;
+    align-self: flex-start;
+    transition: background 0.2s ease;
+}
+
+.cs-cta-btn:hover {
+    background: var(--color-orange-hover);
+}
+
+/* ── Card image ───────────────────────────────────────── */
+.cs-card-image-wrap {
+    overflow: hidden;
+    background: #d0d0d0;
+}
+
+.cs-card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.cs-placeholder-img {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #c8d0d8 0%, #a8b4be 100%);
+}
+
+/* ── Progress bar ─────────────────────────────────────── */
+.cs-progress-track {
+    height: 4px;
+    background: rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.cs-progress-bar {
+    height: 100%;
+    background: linear-gradient(to right, var(--color-orange), #f07040);
+    width: 50%;
+    transition: width 0.15s ease;
+    border-radius: 0 2px 2px 0;
+}
+
+/* ── Responsive ───────────────────────────────────────── */
+@media (max-width: 900px) {
+    .cs-card {
+        grid-template-columns: 1fr;
+        flex: 0 0 85vw;
+    }
+
+    .cs-card-image-wrap {
+        min-height: 240px;
+        order: -1;
+    }
+}
+
+@media (max-width: 600px) {
+    .case-studies-section {
+        padding: 56px 0 0;
+    }
+
+    .cs-card-content {
+        padding: 28px 20px;
+    }
+
+    .cs-card-title {
+        font-size: 18px;
+    }
+
+    .cs-results {
+        grid-template-columns: 1fr;
+    }
+
+    .cs-card {
+        flex: 0 0 calc(100vw - 48px);
+    }
+}

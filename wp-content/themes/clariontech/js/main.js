@@ -118,4 +118,34 @@
         } );
     }
 
+    // ── Case Studies scroll progress ─────────────────────────────
+    const csTrack   = document.getElementById( 'cs-cards' );
+    const csProgBar = document.getElementById( 'cs-progress-bar' );
+
+    if ( csTrack && csProgBar ) {
+        const updateCsProgress = function () {
+            const max = csTrack.scrollWidth - csTrack.clientWidth;
+            const pct = max > 0 ? ( csTrack.scrollLeft / max ) * 100 : 0;
+            const barWidth = csTrack.clientWidth / csTrack.scrollWidth * 100;
+            csProgBar.style.width = barWidth + ( pct / 100 ) * ( 100 - barWidth ) + '%';
+        };
+
+        csTrack.addEventListener( 'scroll', updateCsProgress, { passive: true } );
+        updateCsProgress();
+
+        // Drag-to-scroll
+        let csDragging = false, csStartX, csScrollStart;
+        csTrack.addEventListener( 'mousedown', function ( e ) {
+            csDragging  = true;
+            csStartX    = e.pageX - csTrack.offsetLeft;
+            csScrollStart = csTrack.scrollLeft;
+        } );
+        document.addEventListener( 'mouseup',   function () { csDragging = false; } );
+        document.addEventListener( 'mousemove', function ( e ) {
+            if ( ! csDragging ) return;
+            e.preventDefault();
+            csTrack.scrollLeft = csScrollStart - ( e.pageX - csTrack.offsetLeft - csStartX );
+        } );
+    }
+
 } )();

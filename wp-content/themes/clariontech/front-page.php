@@ -13,8 +13,10 @@ get_header();
 
     <?php get_template_part( 'template-parts/industries' ); ?>
 
+    <?php get_template_part( 'template-parts/case-studies' ); ?>
+
     <?php
-    // More sections (About, Portfolio, Testimonials, etc.) will be added here
+    // More sections will be added here
     ?>
 
 </main>
