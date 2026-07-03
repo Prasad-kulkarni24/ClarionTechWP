@@ -11,6 +11,8 @@ get_header();
 
     <?php get_template_part( 'template-parts/services' ); ?>
 
+    <?php get_template_part( 'template-parts/industries' ); ?>
+
     <?php
     // More sections (About, Portfolio, Testimonials, etc.) will be added here
     ?>

@@ -60,6 +60,34 @@
         } );
     }
 
+    // ── Industries tab switching ──────────────────────────────────
+    const tabBtns  = document.querySelectorAll( '.ind-tab-btn' );
+    const tabPanels = document.querySelectorAll( '.ind-panel' );
+
+    tabBtns.forEach( function ( btn ) {
+        btn.addEventListener( 'click', function () {
+            const target = this.dataset.tab;
+
+            tabBtns.forEach( function ( b ) {
+                b.classList.remove( 'is-active' );
+                b.setAttribute( 'aria-selected', 'false' );
+            } );
+            tabPanels.forEach( function ( p ) {
+                p.classList.remove( 'is-active' );
+                p.setAttribute( 'aria-hidden', 'true' );
+            } );
+
+            this.classList.add( 'is-active' );
+            this.setAttribute( 'aria-selected', 'true' );
+
+            const panel = document.getElementById( 'ind-panel-' + target );
+            if ( panel ) {
+                panel.classList.add( 'is-active' );
+                panel.setAttribute( 'aria-hidden', 'false' );
+            }
+        } );
+    } );
+
     // ── Services cards scroll progress ───────────────────────────
     const cards   = document.getElementById( 'services-cards' );
     const progBar = document.getElementById( 'services-progress-bar' );

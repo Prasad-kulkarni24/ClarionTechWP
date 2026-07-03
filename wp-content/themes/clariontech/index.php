@@ -11,6 +11,8 @@ get_header();
 
     <?php get_template_part( 'template-parts/services' ); ?>
 
+    <?php get_template_part( 'template-parts/industries' ); ?>
+
     <?php
     // Additional page sections will be added here as more designs are shared
     ?>
