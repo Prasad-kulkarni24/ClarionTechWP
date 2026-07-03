@@ -60,4 +60,34 @@
         } );
     }
 
+    // ── Services cards scroll progress ───────────────────────────
+    const cards   = document.getElementById( 'services-cards' );
+    const progBar = document.getElementById( 'services-progress-bar' );
+
+    if ( cards && progBar ) {
+        const updateProgress = function () {
+            const max = cards.scrollWidth - cards.clientWidth;
+            const pct = max > 0 ? ( cards.scrollLeft / max ) * 100 : 0;
+            const barWidth = cards.clientWidth / cards.scrollWidth * 100;
+            progBar.style.width = barWidth + ( pct / 100 ) * ( 100 - barWidth ) + '%';
+        };
+
+        cards.addEventListener( 'scroll', updateProgress, { passive: true } );
+        updateProgress();
+
+        // Drag-to-scroll
+        let isDown = false, startX, scrollStart;
+        cards.addEventListener( 'mousedown', function ( e ) {
+            isDown    = true;
+            startX    = e.pageX - cards.offsetLeft;
+            scrollStart = cards.scrollLeft;
+        } );
+        document.addEventListener( 'mouseup',   function () { isDown = false; } );
+        document.addEventListener( 'mousemove', function ( e ) {
+            if ( ! isDown ) return;
+            e.preventDefault();
+            cards.scrollLeft = scrollStart - ( e.pageX - cards.offsetLeft - startX );
+        } );
+    }
+
 } )();

@@ -9,8 +9,10 @@ get_header();
 
     <?php get_template_part( 'template-parts/hero' ); ?>
 
+    <?php get_template_part( 'template-parts/services' ); ?>
+
     <?php
-    // More sections (Services, About, Portfolio, Testimonials, etc.) will be added here
+    // More sections (About, Portfolio, Testimonials, etc.) will be added here
     ?>
 
 </main>
