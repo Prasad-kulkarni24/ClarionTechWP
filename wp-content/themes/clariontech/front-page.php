@@ -21,6 +21,8 @@ get_header();
 
     <?php get_template_part( 'template-parts/engineers' ); ?>
 
+    <?php get_template_part( 'template-parts/cta-banner' ); ?>
+
     <?php
     // More sections will be added here
     ?>
