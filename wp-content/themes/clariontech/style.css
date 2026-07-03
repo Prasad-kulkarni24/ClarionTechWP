@@ -1597,3 +1597,140 @@ input, textarea, select, button {
         font-size: 60px;
     }
 }
+
+/* ============================================================
+   ENGINEERS SECTION
+   ============================================================ */
+.engineers-section {
+    padding: 80px 0 88px;
+    background: var(--color-white);
+}
+
+.eng-header {
+    max-width: 900px;
+    margin-bottom: 48px;
+}
+
+.eng-heading {
+    font-size: clamp(28px, 3.5vw, 46px);
+    font-weight: 800;
+    color: var(--color-dark-navy);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin-bottom: 20px;
+}
+
+.eng-description {
+    font-size: 15px;
+    color: var(--color-text-body);
+    line-height: 1.75;
+    max-width: 860px;
+}
+
+/* ── 3-column grid ────────────────────────────────────── */
+.eng-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border: 1px solid var(--color-border);
+}
+
+.eng-card {
+    border-right: 1px solid var(--color-border);
+    position: relative;
+    overflow: hidden;
+}
+
+.eng-card:last-child {
+    border-right: none;
+}
+
+.eng-card-inner {
+    padding: 48px 36px 44px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    height: 100%;
+}
+
+/* Featured card — subtle peach glow bottom-left */
+.eng-card--featured::before {
+    content: '';
+    position: absolute;
+    bottom: -40px;
+    left: -40px;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, rgba(232, 73, 15, 0.12) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+/* ── Card elements ────────────────────────────────────── */
+.eng-role {
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--color-dark-navy);
+    line-height: 1.2;
+}
+
+.eng-name-pill {
+    display: inline-block;
+    border: 1px solid var(--color-dark-navy);
+    border-radius: 100px;
+    padding: 6px 16px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--color-dark-navy);
+    align-self: flex-start;
+}
+
+.eng-skills {
+    font-size: 13px;
+    font-style: italic;
+    color: var(--color-orange);
+    line-height: 1.6;
+}
+
+/* ── Responsive ───────────────────────────────────────── */
+@media (max-width: 860px) {
+    .eng-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .eng-card:nth-child(2) {
+        border-right: none;
+    }
+
+    .eng-card:nth-child(3) {
+        border-top: 1px solid var(--color-border);
+        border-right: none;
+        grid-column: 1 / -1;
+    }
+}
+
+@media (max-width: 560px) {
+    .engineers-section {
+        padding: 56px 0 64px;
+    }
+
+    .eng-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .eng-card {
+        border-right: none;
+        border-bottom: 1px solid var(--color-border);
+    }
+
+    .eng-card:last-child {
+        border-bottom: none;
+    }
+
+    .eng-card:nth-child(3) {
+        grid-column: auto;
+        border-top: none;
+    }
+
+    .eng-card-inner {
+        padding: 32px 24px;
+    }
+}

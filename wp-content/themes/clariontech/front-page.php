@@ -19,6 +19,8 @@ get_header();
 
     <?php get_template_part( 'template-parts/testimonials' ); ?>
 
+    <?php get_template_part( 'template-parts/engineers' ); ?>
+
     <?php
     // More sections will be added here
     ?>
