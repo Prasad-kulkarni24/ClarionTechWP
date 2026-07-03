@@ -138,6 +138,61 @@ function clariontech_customizer( $wp_customize ) {
 }
 add_action( 'customize_register', 'clariontech_customizer' );
 
+// ── Why Clarion Customizer Settings ──────────────────────────
+function clariontech_customizer_why_clarion( $wp_customize ) {
+
+    $wp_customize->add_section( 'why_clarion_section', [
+        'title'    => __( 'Why Clarion Section', 'clariontech' ),
+        'priority' => 40,
+    ] );
+
+    $fields = [
+        // Header
+        'wc_heading'     => [ 'label' => 'Section Heading',     'default' => 'Why Companies Choose Clarion for Python AI', 'type' => 'text' ],
+        'wc_description' => [ 'label' => 'Section Description', 'default' => "We've spent 25 years building mission-critical software for companies that cannot afford delivery failure. From a single embedded engineer to a full AI development squad, we bring the talent, the process, and the domain knowledge to deliver.", 'type' => 'textarea' ],
+
+        // Card 1
+        'wc_card1_metric' => [ 'label' => 'Card 1 — Metric (e.g. Top 1%)',  'default' => 'Top 1%',             'type' => 'text' ],
+        'wc_card1_title'  => [ 'label' => 'Card 1 — Title',                 'default' => 'Python Developers',  'type' => 'text' ],
+        'wc_card1_body1'  => [ 'label' => 'Card 1 — Paragraph 1',           'default' => 'Every engineer on our team cleared a multi-stage evaluation, holds 6–12 years of experience, and is well acquainted with frameworks like Django, Vue, Flask, Falcon, Tornado, and more.', 'type' => 'textarea' ],
+        'wc_card1_body2'  => [ 'label' => 'Card 1 — Paragraph 2',           'default' => 'We build teams that understand FDA audits, or a HIPAA breach notification actually means for the system they\'re building.', 'type' => 'textarea' ],
+
+        // Card 2
+        'wc_card2_metric' => [ 'label' => 'Card 2 — Metric (e.g. 1,500+)', 'default' => '1,500+',                       'type' => 'text' ],
+        'wc_card2_title'  => [ 'label' => 'Card 2 — Title',                'default' => 'Successful Global Projects',    'type' => 'text' ],
+        'wc_card2_body1'  => [ 'label' => 'Card 2 — Paragraph 1',          'default' => 'Our teams have delivered 1500+ projects encompassing mission-critical software across Healthcare, Finance, Manufacturing, and Pharma.', 'type' => 'textarea' ],
+        'wc_card2_body2'  => [ 'label' => 'Card 2 — Paragraph 2',          'default' => 'The 85% client renewal rate that comes with it isn\'t a marketing figure, it\'s the measurable outcome of 25 years of accountable engineering.', 'type' => 'textarea' ],
+
+        // Card 3
+        'wc_card3_title' => [ 'label' => 'Card 3 — Title',       'default' => 'Onboarded in as Little as 48 Hours',                                                                                                                      'type' => 'text' ],
+        'wc_card3_body1' => [ 'label' => 'Card 3 — Paragraph 1', 'default' => 'Our pre-vetted, domain-matched Python engineers integrate with your tools, your sprint cycle, and your compliance requirements within 48 hours of a signed agreement.', 'type' => 'textarea' ],
+        'wc_card3_body2' => [ 'label' => 'Card 3 — Paragraph 2', 'default' => 'Teams become productive from the first standup, not after an extended onboarding at your expense.',                                                          'type' => 'textarea' ],
+
+        // Card 4
+        'wc_card4_title'   => [ 'label' => 'Card 4 — Title',     'default' => 'Scalability and Flexibility via the vEmployee™ Model',                                              'type' => 'text' ],
+        'wc_card4_body'    => [ 'label' => 'Card 4 — Paragraph', 'default' => 'Our vEmployee™ model scales from one engineer to a full Python AI squad without disrupting your delivery timeline.', 'type' => 'textarea' ],
+        'wc_card4_bullet1' => [ 'label' => 'Card 4 — Bullet 1',  'default' => 'No lock-in, no penalties, no recruitment pipeline to manage.', 'type' => 'text' ],
+        'wc_card4_bullet2' => [ 'label' => 'Card 4 — Bullet 2',  'default' => 'Scale up in 2 weeks.',          'type' => 'text' ],
+        'wc_card4_bullet3' => [ 'label' => 'Card 4 — Bullet 3',  'default' => 'Reduce with 30 days\' notice.', 'type' => 'text' ],
+        'wc_card4_bullet4' => [ 'label' => 'Card 4 — Bullet 4',  'default' => 'Your team, on your terms.',     'type' => 'text' ],
+    ];
+
+    foreach ( $fields as $id => $args ) {
+        $sanitize = ( $args['type'] === 'textarea' ) ? 'sanitize_textarea_field' : 'sanitize_text_field';
+        $wp_customize->add_setting( $id, [
+            'default'           => $args['default'],
+            'sanitize_callback' => $sanitize,
+            'transport'         => 'refresh',
+        ] );
+        $wp_customize->add_control( $id, [
+            'label'   => $args['label'],
+            'section' => 'why_clarion_section',
+            'type'    => $args['type'],
+        ] );
+    }
+}
+add_action( 'customize_register', 'clariontech_customizer_why_clarion' );
+
 // ── Helper: get_theme_mod with fallback ───────────────────────
 function ct_mod( $key, $default = '' ) {
     return get_theme_mod( $key, $default );
