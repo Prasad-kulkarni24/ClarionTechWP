@@ -311,9 +311,10 @@ input, textarea, select, button {
 }
 
 .hero-divider {
-    width: 72px;
-    height: 4px;
-    background: var(--color-orange);
+    width: 420px;
+    max-width: 100%;
+    height: 3px;
+    background: linear-gradient(to right, #E8490F 0%, rgba(232, 73, 15, 0) 100%);
     border-radius: 2px;
     margin: 20px 0 24px;
 }
