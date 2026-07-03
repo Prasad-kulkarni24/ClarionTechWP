@@ -23,6 +23,8 @@ get_header();
 
     <?php get_template_part( 'template-parts/cta-banner' ); ?>
 
+    <?php get_template_part( 'template-parts/get-started' ); ?>
+
     <?php
     // Additional page sections will be added here as more designs are shared
     ?>
