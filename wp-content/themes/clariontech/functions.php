@@ -5,11 +5,11 @@
 
 if ( ! defined( 'ABSPATH' ) ) exit;
 
-require_once CLARIONTECH_DIR . '/inc/template-helpers.php';
-
 define( 'CLARIONTECH_VERSION', '1.2.0' );
 define( 'CLARIONTECH_DIR', get_template_directory() );
 define( 'CLARIONTECH_URI', get_template_directory_uri() );
+
+require_once CLARIONTECH_DIR . '/inc/template-helpers.php';
 
 // ── Theme Setup ──────────────────────────────────────────────
 function clariontech_setup() {
