@@ -2263,3 +2263,232 @@ input, textarea, select, button {
         padding: 12px 16px 20px;
     }
 }
+
+/* ============================================================
+   Contact Page
+   ============================================================ */
+
+.contact-page-section {
+    padding: 80px 0 100px;
+    background: #F8F9FB;
+}
+
+.contact-page-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: start;
+}
+
+/* ── Left col ── */
+.contact-info-heading {
+    font-size: clamp(28px, 3.5vw, 40px);
+    font-weight: 800;
+    color: var(--color-dark-navy);
+    line-height: 1.2;
+    margin: 0 0 20px;
+}
+
+.contact-info-highlight {
+    color: var(--color-orange);
+}
+
+.contact-info-body {
+    font-size: 15px;
+    line-height: 1.75;
+    color: var(--color-text-body);
+    margin: 0 0 36px;
+    max-width: 460px;
+}
+
+.contact-detail-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.contact-detail-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 15px;
+    color: var(--color-dark-navy);
+    font-weight: 500;
+}
+
+.contact-detail-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.contact-trust-badges {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+
+.contact-badge {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.contact-badge-number {
+    font-size: 24px;
+    font-weight: 800;
+    color: var(--color-orange);
+    line-height: 1;
+}
+
+.contact-badge-label {
+    font-size: 12px;
+    color: var(--color-text-light);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    font-weight: 500;
+}
+
+/* ── Right col (form card) ── */
+.contact-form-card {
+    background: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    padding: 40px 36px;
+}
+
+.contact-form-title {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--color-dark-navy);
+    margin: 0 0 28px;
+}
+
+.contact-page-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.cpf-field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.cpf-label {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--color-dark-navy);
+}
+
+.cpf-label span {
+    color: var(--color-orange);
+}
+
+.cpf-input {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid var(--color-border);
+    border-radius: 6px;
+    font-size: 14px;
+    color: var(--color-dark-navy);
+    background: #FAFAFA;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    outline: none;
+    font-family: inherit;
+    box-sizing: border-box;
+}
+
+.cpf-input::placeholder {
+    color: #AAAAAA;
+}
+
+.cpf-input:focus {
+    border-color: var(--color-orange);
+    background: var(--color-white);
+    box-shadow: 0 0 0 3px rgba(232, 73, 15, 0.08);
+}
+
+.cpf-textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.cpf-submit {
+    width: 100%;
+    padding: 14px 24px;
+    background: var(--color-orange);
+    color: var(--color-white);
+    border: none;
+    border-radius: 6px;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.15s ease;
+    font-family: inherit;
+    margin-top: 4px;
+}
+
+.cpf-submit:hover {
+    background: #CC3D09;
+}
+
+.cpf-submit:active {
+    transform: scale(0.98);
+}
+
+.cpf-submit:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+}
+
+.contact-form-feedback {
+    padding: 12px 16px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+.contact-form-feedback--success {
+    background: #ECFDF5;
+    color: #065F46;
+    border: 1px solid #A7F3D0;
+}
+
+.contact-form-feedback--error {
+    background: #FEF2F2;
+    color: #991B1B;
+    border: 1px solid #FECACA;
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+    .contact-page-inner {
+        grid-template-columns: 1fr;
+        gap: 48px;
+    }
+
+    .contact-info-body {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 640px) {
+    .contact-page-section {
+        padding: 56px 0 72px;
+    }
+
+    .contact-form-card {
+        padding: 28px 20px;
+    }
+
+    .contact-trust-badges {
+        gap: 16px;
+    }
+}
