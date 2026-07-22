@@ -326,9 +326,9 @@ input, textarea, select, button {
 }
 
 .hero-logo-img {
-    height: 48px;
+    height: 60px;
     width: auto;
-    max-width: 220px;
+    max-width: 260px;
 }
 
 .hero-logo-icon {
@@ -444,11 +444,10 @@ input, textarea, select, button {
 
 .badge-item {
     background: transparent;
-    border-radius: 8px;
+    border-radius: 0;
     padding: 0;
     display: flex;
     align-items: center;
-    gap: 8px;
     box-shadow: none;
     border: none;
 }
@@ -460,19 +459,15 @@ input, textarea, select, button {
     padding: 0;
     box-shadow: none;
     border: none;
+    flex-direction: row;
+    align-items: center;
 }
 
 .badge-item img {
-    height: 56px;
+    height: 64px;
     width: auto;
     display: block;
-    border-radius: 6px;
-}
-
-.badge-clutch {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 10px 14px;
+    border-radius: 8px;
 }
 
 .badge-clutch .badge-name {
@@ -493,9 +488,9 @@ input, textarea, select, button {
 }
 
 .badge-g2 {
-    background: #FF492C;
+    background: transparent;
     color: white;
-    flex-direction: column;
+    flex-direction: row;
     align-items: flex-start;
     padding: 10px 14px;
 }
@@ -523,9 +518,9 @@ input, textarea, select, button {
 }
 
 .badge-goodfirms {
-    background: #1A1A2E;
+    background: transparent;
     color: white;
-    flex-direction: column;
+    flex-direction: row;
     align-items: flex-start;
     padding: 10px 14px;
 }
