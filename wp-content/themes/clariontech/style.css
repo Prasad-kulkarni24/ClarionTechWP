@@ -322,8 +322,13 @@ input, textarea, select, button {
 .hero-logo {
     display: flex;
     align-items: center;
-    gap: 10px;
     margin-bottom: 28px;
+}
+
+.hero-logo-img {
+    height: 48px;
+    width: auto;
+    max-width: 220px;
 }
 
 .hero-logo-icon {
@@ -438,14 +443,30 @@ input, textarea, select, button {
 }
 
 .badge-item {
-    background: var(--color-white);
+    background: transparent;
     border-radius: 8px;
-    padding: 10px 16px;
+    padding: 0;
     display: flex;
     align-items: center;
     gap: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-    border: 1px solid rgba(0,0,0,0.05);
+    box-shadow: none;
+    border: none;
+}
+
+.badge-clutch,
+.badge-g2,
+.badge-goodfirms {
+    background: transparent;
+    padding: 0;
+    box-shadow: none;
+    border: none;
+}
+
+.badge-item img {
+    height: 56px;
+    width: auto;
+    display: block;
+    border-radius: 6px;
 }
 
 .badge-clutch {
