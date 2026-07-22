@@ -2279,3 +2279,160 @@ input, textarea, select, button {
         padding: 12px 16px 20px;
     }
 }
+
+/* ============================================================
+   CONTACT PAGE
+   ============================================================ */
+.ccp-section {
+    padding: 80px 0 100px;
+    background: #FDF5F2;
+    min-height: calc(100vh - var(--header-height));
+}
+
+.ccp-inner {
+    max-width: 780px;
+    margin: 0 auto;
+}
+
+.ccp-intro {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.ccp-heading {
+    font-size: clamp(32px, 4vw, 48px);
+    font-weight: 800;
+    color: var(--color-dark-navy);
+    line-height: 1.15;
+    margin-bottom: 14px;
+}
+
+.ccp-heading-highlight {
+    color: var(--color-orange);
+}
+
+.ccp-subtext {
+    font-size: 16px;
+    color: var(--color-text-light);
+    line-height: 1.6;
+}
+
+.ccp-card {
+    background: var(--color-white);
+    border-radius: 16px;
+    padding: 48px;
+    box-shadow: 0 4px 32px rgba(0,0,0,0.08);
+}
+
+.ccp-form {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.ccp-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+}
+
+.ccp-field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.ccp-label {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--color-dark-navy);
+}
+
+.ccp-label span {
+    color: var(--color-orange);
+}
+
+.ccp-input {
+    width: 100%;
+    padding: 12px 16px;
+    font-size: 15px;
+    font-family: var(--font-primary);
+    color: var(--color-dark-navy);
+    background: var(--color-white);
+    border: 1.5px solid var(--color-border);
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.ccp-input:focus {
+    border-color: var(--color-orange);
+}
+
+.ccp-input::placeholder {
+    color: #aaa;
+}
+
+.ccp-textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.ccp-submit {
+    display: inline-block;
+    padding: 14px 36px;
+    font-size: 15px;
+    font-weight: 700;
+    font-family: var(--font-primary);
+    color: var(--color-white);
+    background: var(--color-orange);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: background 0.2s;
+    align-self: flex-start;
+}
+
+.ccp-submit:hover {
+    background: var(--color-orange-hover);
+}
+
+.ccp-submit:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.ccp-feedback {
+    padding: 14px 16px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+.ccp-feedback--success {
+    background: #ecfdf5;
+    color: #065f46;
+    border: 1px solid #6ee7b7;
+}
+
+.ccp-feedback--error {
+    background: #fef2f2;
+    color: #991b1b;
+    border: 1px solid #fca5a5;
+}
+
+@media (max-width: 640px) {
+    .ccp-card {
+        padding: 28px 20px;
+    }
+    .ccp-row {
+        grid-template-columns: 1fr;
+    }
+    .ccp-submit {
+        width: 100%;
+        text-align: center;
+    }
+}
